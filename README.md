@@ -23,7 +23,7 @@ from awesome-gems*
 
 Note: The script will remove the `display_` prefix when sending the alert to Discord, so you will only have `count`, `event`, and `username`.
 
-2. In the action, select the index connector. Choose the action frequency _"For each alert"_ and insert the following document index configuration:
+2. In the action, select the index connector and name it _"alerts_index"_. Choose the action frequency _"For each alert"_ and insert the following document index configuration:
 
 ```json
 {
@@ -36,6 +36,9 @@ Note: The script will remove the `display_` prefix when sending the alert to Dis
     "context": "{{context.alerts}}"
 }
 ```
+
+Note: You have the option to modify the index name in the script as well.
+
 
 ## Launching the script
 
