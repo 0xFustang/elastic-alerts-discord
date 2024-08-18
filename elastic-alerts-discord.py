@@ -8,7 +8,7 @@ from discord_webhook import DiscordWebhook, DiscordEmbed
 
 # Define the Elasticsearch URLs, username, and password
 
-es_url = [environ.get("ES_URL")]
+es_url = environ.get("ES_URL")
 es_user = environ.get("ES_USER")
 es_password = environ.get("ES_PASSWORD")
 
@@ -16,6 +16,11 @@ es_password = environ.get("ES_PASSWORD")
 
 discord_webhook_url = environ.get("DISCORD_WEBHOOK_URL")
 icon_url = environ.get("ICON_URL")
+
+# Check if any of the required environment variables are missing
+if not es_url or not es_user or not es_password or not discord_webhook_url or not icon_url:
+    print("Error: Missing required environment variables")
+    exit(1)
 
 # Connect to Elasticsearch
 es = Elasticsearch(
