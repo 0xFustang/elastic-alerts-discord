@@ -13,7 +13,4 @@ RUN pip3 install --upgrade pip && \
 
 ENV TZ="Europe/Paris"
 
-# Set PYTHONPATH in /app/src/
-ENV PYTHONPATH="/app/src/"
-
-ENTRYPOINT ["python3", "./app/elastic-alerts-discord.py"]
+ENTRYPOINT ["python3", "./elastic-alerts-discord.py"]
